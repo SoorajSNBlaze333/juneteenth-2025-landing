@@ -1,4 +1,10 @@
 import { motion } from "motion/react";
+import epImage from "../assets/ep-ai.png";
+import ggImage from "../assets/gg-ai.png";
+import fjImage from "../assets/fj-ai.png";
+import texHolImage from "../assets/tex-hol-ai.png";
+import allHolImage from "../assets/all-hol-ai.png";
+import loadingImage from "../assets/loading-ai.png";
 
 export const AiImage = ({ year }: { year: number }) => {
   const className = "max-w-52 rounded-lg border-[1px] border-amber-800";
@@ -12,19 +18,19 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/src/assets/ep-ai.png"
+          src={epImage}
           className={className}
         />
       );
     } else if (year === 1865) {
       return (
         <motion.img
-          key="go-image"
+          key="gg-image"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/src/assets/gg-ai.png"
+          src={ggImage}
           className={className}
         />
       );
@@ -36,7 +42,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/src/assets/fj-ai.png"
+          src={fjImage}
           className={className}
         />
       );
@@ -48,7 +54,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/src/assets/tex-hol-ai.png"
+          src={texHolImage}
           className={className}
         />
       );
@@ -60,7 +66,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/src/assets/all-hol-ai.png"
+          src={allHolImage}
           className={className}
         />
       );
@@ -72,7 +78,7 @@ export const AiImage = ({ year }: { year: number }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-        src="/src/assets/loading-ai.png"
+        src={loadingImage}
         className={className}
       />
     );
