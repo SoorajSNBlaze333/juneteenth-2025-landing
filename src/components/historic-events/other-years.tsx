@@ -1,16 +1,10 @@
-import { motion } from "motion/react";
-import { Quote } from "./quote";
-import { quotesContainer, quotesItem } from "../utils/variants";
+import { Quote } from "../quote";
+import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../quotes-container";
 
 export const OtherYears = ({ year }: { year: number }) => {
   return (
-    <motion.section
-      variants={quotesContainer}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
-      style={{ maxWidth: "600px" }}
-    >
+    <QuotesContainer>
       <Quote animationKey="highlight-1" variants={quotesItem}>
         “Keep Scrolling to transition onto the next years.”
       </Quote>
@@ -19,6 +13,6 @@ export const OtherYears = ({ year }: { year: number }) => {
           “You are almost there! Just a little bit more.”
         </Quote>
       )}
-    </motion.section>
+    </QuotesContainer>
   );
 };

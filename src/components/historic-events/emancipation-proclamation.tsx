@@ -1,17 +1,10 @@
-import { motion } from "motion/react";
-import { Quote } from "./quote";
-import { quotesContainer, quotesItem } from "../utils/variants";
+import { Quote } from "../quote";
+import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../quotes-container";
 
 export const EmancipationProclamation = () => {
   return (
-    <motion.section
-      variants={quotesContainer}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
-      style={{ maxWidth: "600px" }}
-      id="emancipation-proclamation"
-    >
+    <QuotesContainer>
       <Quote animationKey="highlight-1" variants={quotesItem}>
         Signed on January 1, 1863, it declared that all enslaved people in
         Confederate-held territories were to be set free.
@@ -29,6 +22,6 @@ export const EmancipationProclamation = () => {
         It opened the door for over 180,000 African Americans to enlist in the
         Union Army and Navy, giving the fight for freedom literal force.
       </Quote>
-    </motion.section>
+    </QuotesContainer>
   );
 };

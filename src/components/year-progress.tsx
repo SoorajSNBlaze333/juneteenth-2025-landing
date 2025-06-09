@@ -39,7 +39,7 @@ export const YearProgress = ({
               >
                 <p
                   className={`text-xs font-semibold absolute right-4 w-max -top-1 ${
-                    progress >= val ? "text-green-300" : "text-slate-300"
+                    progress >= val ? "text-green-300" : "text-slate-400"
                   } `}
                 >
                   {`${

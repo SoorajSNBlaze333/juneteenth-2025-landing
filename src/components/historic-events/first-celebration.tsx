@@ -1,16 +1,10 @@
-import { motion } from "motion/react";
-import { Quote } from "./quote";
-import { quotesContainer, quotesItem } from "../utils/variants";
+import { Quote } from "../quote";
+import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../quotes-container";
 
 export const FirstCelebration = () => {
   return (
-    <motion.section
-      variants={quotesContainer}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
-      style={{ maxWidth: "600px" }}
-    >
+    <QuotesContainer>
       <Quote animationKey="highlight-1" variants={quotesItem}>
         In 1872, African Americans in Texas organized the first formal
         Juneteenth celebrations to honor their newly recognized freedom after
@@ -31,6 +25,6 @@ export const FirstCelebration = () => {
         annual cultural and political tradition, even as Black Americans faced
         Reconstruction-era injustices.
       </Quote>
-    </motion.section>
+    </QuotesContainer>
   );
 };

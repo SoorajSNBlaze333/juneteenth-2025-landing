@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   useScroll,
   useTransform,
@@ -6,21 +6,25 @@ import {
   AnimatePresence,
   motion,
 } from "motion/react";
+
+// Misc Components
 import { YearTitle } from "./components/year-title";
 import { Title } from "./components/title";
 import { AiImage } from "./components/ai-image";
-import { EmancipationProclamation } from "./components/emancipation-proclamation";
-import { GeneralOrderThree } from "./components/general-order-three";
 import { RollingYear } from "./components/rolling-year";
-import { OtherYears } from "./components/other-years";
 import { YearProgress } from "./components/year-progress";
-import { FirstCelebration } from "./components/first-celebration";
-import { TexasHoliday } from "./components/texas-holiday";
-import { FederalHoliday } from "./components/federal-holiday";
 import { BreakingChains } from "./components/breaking-chains";
 import { Footer } from "./components/footer";
 
-const PERCENTAGE = [0, 0.25, 0.51, 0.75, 1];
+// Historic Events
+import { EmancipationProclamation } from "./components/historic-events/emancipation-proclamation";
+import { GeneralOrderThree } from "./components/historic-events/general-order-three";
+import { FirstCelebration } from "./components/historic-events/first-celebration";
+import { TexasHoliday } from "./components/historic-events/texas-holiday";
+import { FederalHoliday } from "./components/historic-events/federal-holiday";
+import { OtherYears } from "./components/historic-events/other-years";
+
+const PERCENTAGE = [0, 0.25, 0.5, 0.75, 1];
 const YEARS = [1863, 1865, 1872, 1980, 2021];
 
 const App = () => {
@@ -31,6 +35,7 @@ const App = () => {
   const { scrollYProgress } = useScroll({ container: scrollRef });
   const currentYear = useTransform(scrollYProgress, PERCENTAGE, YEARS);
 
+  // set the scroll & set direction based on scroll
   useMotionValueEvent(scrollYProgress, "change", (newScroll) => {
     if (newScroll > scroll) {
       setDirection(1);
@@ -40,6 +45,7 @@ const App = () => {
     setScroll(newScroll);
   });
 
+  // get the current year based on the transformed scroll y
   useMotionValueEvent(currentYear, "change", (latest) => {
     setYear(Math.round(latest));
   });
@@ -58,12 +64,15 @@ const App = () => {
     }
   };
 
-  const isYearAvailable =
-    year === 1863 ||
-    year === 1865 ||
-    year === 1872 ||
-    year === 1980 ||
-    year === 2021;
+  const isYearAvailable = useMemo(
+    () =>
+      year === 1863 ||
+      year === 1865 ||
+      year === 1872 ||
+      year === 1980 ||
+      year === 2021,
+    [year]
+  );
 
   const findClosestYear = useCallback(
     (direction: number) => {
@@ -86,17 +95,19 @@ const App = () => {
         return PERCENTAGE[direction > 0 ? ranges.rangeEnd : ranges.rangeStart];
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [year]
+    [isYearAvailable, year]
   );
 
-  const handleKeys = (key: string) => {
-    if (key === "ArrowRight") {
-      handleYearClick(findClosestYear(1));
-    } else if (key === "ArrowLeft") {
-      handleYearClick(findClosestYear(-1));
-    }
-  };
+  const handleKeys = useCallback(
+    (key: string) => {
+      if (key === "ArrowRight") {
+        handleYearClick(findClosestYear(1));
+      } else if (key === "ArrowLeft") {
+        handleYearClick(findClosestYear(-1));
+      }
+    },
+    [findClosestYear]
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", (event) => handleKeys(event.key));
@@ -104,8 +115,7 @@ const App = () => {
     return () => {
       window.removeEventListener("keydown", (event) => handleKeys(event.key));
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isYearAvailable, year]);
+  }, [handleKeys, isYearAvailable, year]);
 
   return (
     <>

@@ -6,83 +6,91 @@ import texHolImage from "../assets/tex-hol-ai.webp";
 import allHolImage from "../assets/all-hol-ai.webp";
 import loadingImage from "../assets/loading-ai.webp";
 
-export const AiImage = ({ year }: { year: number }) => {
-  const className = "max-w-52 rounded-lg border-[1px] border-amber-800";
+const initial = { opacity: 0 };
+const animate = { opacity: 1 };
+const exit = { opacity: 0 };
+const transition = { duration: 0.4, type: "spring", bounce: 0.2 };
 
-  const renderImage = () => {
-    if (year === 1863) {
-      return (
-        <motion.img
-          key="ep-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src={epImage}
-          className={className}
-        />
-      );
-    } else if (year === 1865) {
-      return (
-        <motion.img
-          key="gg-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src={ggImage}
-          className={className}
-        />
-      );
-    } else if (year === 1872) {
-      return (
-        <motion.img
-          key="fj-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src={fjImage}
-          className={className}
-        />
-      );
-    } else if (year === 1980) {
-      return (
-        <motion.img
-          key="tex-hol-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src={texHolImage}
-          className={className}
-        />
-      );
-    } else if (year === 2021) {
-      return (
-        <motion.img
-          key="all-hol-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src={allHolImage}
-          className={className}
-        />
-      );
-    }
+export const AiImage = ({ year }: { year: number }) => {
+  const className =
+    "max-w-52 rounded-lg border-[1px] border-amber-800 hidden md:block";
+
+  if (year === 1863) {
     return (
       <motion.img
-        key="loading-image"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-        src={loadingImage}
+        key="ep-image"
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+        src={epImage}
+        loading="lazy"
         className={className}
       />
     );
-  };
-
-  return <div className="hidden md:block">{renderImage()}</div>;
+  } else if (year === 1865) {
+    return (
+      <motion.img
+        key="gg-image"
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+        src={ggImage}
+        loading="lazy"
+        className={className}
+      />
+    );
+  } else if (year === 1872) {
+    return (
+      <motion.img
+        key="fj-image"
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+        src={fjImage}
+        loading="lazy"
+        className={className}
+      />
+    );
+  } else if (year === 1980) {
+    return (
+      <motion.img
+        key="tex-hol-image"
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+        src={texHolImage}
+        loading="lazy"
+        className={className}
+      />
+    );
+  } else if (year === 2021) {
+    return (
+      <motion.img
+        key="all-hol-image"
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+        src={allHolImage}
+        loading="lazy"
+        className={className}
+      />
+    );
+  }
+  return (
+    <motion.img
+      key="loading-image"
+      initial={initial}
+      animate={animate}
+      exit={exit}
+      transition={transition}
+      src={loadingImage}
+      loading="lazy"
+      className={className}
+    />
+  );
 };

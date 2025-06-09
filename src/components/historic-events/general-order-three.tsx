@@ -1,16 +1,10 @@
-import { motion } from "motion/react";
-import { Quote } from "./quote";
-import { quotesContainer, quotesItem } from "../utils/variants";
+import { Quote } from "../quote";
+import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../quotes-container";
 
 export const GeneralOrderThree = () => {
   return (
-    <motion.section
-      variants={quotesContainer}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
-      style={{ maxWidth: "600px" }}
-    >
+    <QuotesContainer>
       <Quote animationKey="highlight-1" variants={quotesItem}>
         General Order No. 3 marked the first formal announcement in Texas that
         all enslaved people were free — nearly 2.5 years after the Emancipation
@@ -31,6 +25,6 @@ export const GeneralOrderThree = () => {
         and work for wages — reflecting the government’s limited commitment to
         full economic liberation.
       </Quote>
-    </motion.section>
+    </QuotesContainer>
   );
 };

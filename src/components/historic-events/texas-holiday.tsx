@@ -1,16 +1,10 @@
-import { motion } from "motion/react";
-import { Quote } from "./quote";
-import { quotesContainer, quotesItem } from "../utils/variants";
+import { Quote } from "../quote";
+import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../quotes-container";
 
 export const TexasHoliday = () => {
   return (
-    <motion.section
-      variants={quotesContainer}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
-      style={{ maxWidth: "600px" }}
-    >
+    <QuotesContainer>
       <Quote animationKey="highlight-1" variants={quotesItem}>
         In 1980, Texas officially declared June 19 a state holiday through
         legislation, becoming the first state to recognize Juneteenth as an
@@ -31,6 +25,6 @@ export const TexasHoliday = () => {
         ultimately influencing other states — and later, the federal government
         — to follow suit.
       </Quote>
-    </motion.section>
+    </QuotesContainer>
   );
 };
