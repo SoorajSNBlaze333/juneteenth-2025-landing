@@ -8,7 +8,7 @@ export const TexasHoliday = () => {
       variants={quotesContainer}
       initial="hidden"
       animate="show"
-      className="flex flex-col gap-6"
+      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
       style={{ maxWidth: "600px" }}
     >
       <Quote animationKey="highlight-1" variants={quotesItem}>

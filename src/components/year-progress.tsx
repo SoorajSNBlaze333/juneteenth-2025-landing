@@ -17,7 +17,7 @@ export const YearProgress = ({
   const { getTitle } = useGetHistoricTitle(yearProgressMap[0]);
 
   return (
-    <section className="h-full flex justify-center items-center">
+    <section className="h-full hidden md:flex justify-center items-center">
       <div className="h-full w-1 bg-slate-500 relative max-h-[350px]">
         <div
           className="relative z-40 left-0 h-full w-1 bg-green-300"
