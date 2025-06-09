@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-import epImage from "../assets/ep-ai.png";
-import ggImage from "../assets/gg-ai.png";
-import fjImage from "../assets/fj-ai.png";
-import texHolImage from "../assets/tex-hol-ai.png";
-import allHolImage from "../assets/all-hol-ai.png";
-import loadingImage from "../assets/loading-ai.png";
+import epImage from "../assets/ep-ai.webp";
+import ggImage from "../assets/gg-ai.webp";
+import fjImage from "../assets/fj-ai.webp";
+import texHolImage from "../assets/tex-hol-ai.webp";
+import allHolImage from "../assets/all-hol-ai.webp";
+import loadingImage from "../assets/loading-ai.webp";
 
 export const AiImage = ({ year }: { year: number }) => {
   const className = "max-w-52 rounded-lg border-[1px] border-amber-800";
