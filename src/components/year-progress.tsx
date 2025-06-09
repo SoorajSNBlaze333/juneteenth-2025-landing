@@ -1,3 +1,5 @@
+import { useGetHistoricTitle } from "../hooks/use-get-historic-title";
+
 export const YearProgress = ({
   progress,
   onClick,
@@ -12,30 +14,41 @@ export const YearProgress = ({
     0.75: 1980,
     1: 2021,
   };
+  const { getTitle } = useGetHistoricTitle(yearProgressMap[0]);
 
   return (
-    <section className="w-full col-span-4 mt-5 flex justify-center items-center">
-      <div className="h-1 w-full bg-slate-500 relative max-w-[700px]">
+    <section className="h-full flex justify-center items-center">
+      <div className="h-full w-1 bg-slate-500 relative max-h-[350px]">
         <div
-          className="relative z-40 left-0 h-1 bg-red-500"
-          style={{ width: `${progress * 100}%` }}
+          className="relative z-40 left-0 h-full w-1 bg-green-300"
+          style={{ height: `${progress * 100}%` }}
         />
-        <div className="absolute z-50 -top-1 left-0 w-full flex">
+        <div className="absolute z-50 top-0 -left-1 w-full h-full flex">
           {[0, 0.25, 0.5, 0.75, 1].map((val, index) => (
             <div
-              className="absolute flex flex-col justify-start items-start cursor-pointer"
-              style={{ left: `${val * 100}%` }}
+              className="absolute flex justify-center items-start cursor-pointer"
+              style={{ top: `${val * 100}%` }}
               onClick={() => onClick && onClick(val)}
             >
+              {/*  */}
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full z-40 ${
-                  progress >= val ? "bg-red-500" : "bg-slate-500"
+                className={`w-3 h-3 relative rounded-full z-40 ${
+                  progress >= val ? "bg-green-300" : "bg-slate-500"
                 }`}
-              />
-              <p className="text-sm text-slate-300">
-                {yearProgressMap[val as keyof typeof yearProgressMap]}
-              </p>
+              >
+                <p
+                  className={`text-xs font-semibold absolute right-4 w-max -top-1 ${
+                    progress >= val ? "text-green-300" : "text-slate-300"
+                  } `}
+                >
+                  {`${
+                    yearProgressMap[val as keyof typeof yearProgressMap]
+                  } (${getTitle(
+                    yearProgressMap[val as keyof typeof yearProgressMap]
+                  )})`}
+                </p>
+              </div>
             </div>
           ))}
         </div>

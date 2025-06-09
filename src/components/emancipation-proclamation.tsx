@@ -8,7 +8,7 @@ export const EmancipationProclamation = () => {
       variants={quotesContainer}
       initial="hidden"
       animate="show"
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-6"
       style={{ maxWidth: "600px" }}
       id="emancipation-proclamation"
     >

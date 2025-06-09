@@ -8,7 +8,7 @@ export const OtherYears = ({ year }: { year: number }) => {
       variants={quotesContainer}
       initial="hidden"
       animate="show"
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-6"
       style={{ maxWidth: "600px" }}
     >
       <Quote animationKey="highlight-1" variants={quotesItem}>

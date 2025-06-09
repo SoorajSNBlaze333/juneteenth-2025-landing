@@ -122,14 +122,17 @@ const App = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, type: "spring", bounce: 0.25 }}
-                className="grid grid-cols-4 gap-4 max-w-[1000px] w-full"
+                className="grid grid-cols-5 gap-6 max-w-[1000px] w-full"
               >
                 <motion.div
                   key="year-available-left"
-                  className="col-span-1 flex flex-col justify-center items-end gap-4"
+                  className="col-span-2 flex justify-end items-center gap-6"
                 >
-                  <AiImage year={year} />
-                  <RollingYear year={year} direction={direction} />
+                  <YearProgress progress={scroll} onClick={handleYearClick} />
+                  <div className="flex flex-col justify-center items-end gap-6">
+                    <AiImage year={year} />
+                    <RollingYear year={year} direction={direction} />
+                  </div>
                 </motion.div>
                 <div className="col-span-3 flex flex-col justify-start items-start gap-4">
                   <Title year={year} />
@@ -140,7 +143,6 @@ const App = () => {
                   {year === 1980 && <TexasHoliday />}
                   {year === 2021 && <FederalHoliday />}
                 </div>
-                <YearProgress progress={scroll} onClick={handleYearClick} />
               </motion.section>
             ) : (
               <motion.section
@@ -149,21 +151,31 @@ const App = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, type: "spring", bounce: 0.25 }}
-                className="grid grid-cols-4 gap-4 max-w-[1000px] w-full"
+                className="grid grid-cols-5 gap-6 max-w-[1000px] w-full"
               >
                 <motion.div
+                  key="year-available-left"
+                  className="col-span-2 flex justify-end items-center gap-6"
+                >
+                  <YearProgress progress={scroll} onClick={handleYearClick} />
+                  <div className="flex flex-col justify-center items-end gap-6">
+                    <AiImage year={year} />
+                    <RollingYear year={year} direction={direction} />
+                  </div>
+                </motion.div>
+                {/* <motion.div
                   key="year-not-available-left"
                   className="col-span-1 flex flex-col justify-center items-end gap-4"
                 >
                   <AiImage year={year} />
                   <RollingYear year={year} direction={direction} />
-                </motion.div>
+                </motion.div> */}
                 <div className="col-span-3 flex flex-col justify-start items-start gap-4">
                   <Title year={year} />
                   <YearTitle year={year} />
                   <OtherYears year={year} />
                 </div>
-                <YearProgress progress={scroll} onClick={handleYearClick} />
+                {/* <YearProgress progress={scroll} onClick={handleYearClick} /> */}
               </motion.section>
             )}
           </AnimatePresence>
@@ -178,6 +190,13 @@ const App = () => {
         <section className="absolute flex justify-center items-center blur-[100px]">
           <div className="w-[500px] h-[500px] bg-black absolute"></div>
         </section>
+      </section>
+      <section className="fixed bottom-2 w-full left-0 flex justify-center items-center">
+        <p className="text-xs text-white/75">
+          2025 © Juneteenth Challenge for Dev.to • Sooraj Sivadasan Nair • Made
+          using Vite, React, Tailwind & Motion • All images used were generated
+          using ChatGpt
+        </p>
       </section>
     </main>
   );
