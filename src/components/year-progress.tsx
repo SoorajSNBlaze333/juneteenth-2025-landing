@@ -29,10 +29,10 @@ export const YearProgress = ({
               className="absolute flex justify-center items-start cursor-pointer"
               style={{ top: `${val * 100}%` }}
               onClick={() => onClick && onClick(val)}
+              key={index}
             >
               {/*  */}
               <div
-                key={index}
                 className={`w-3 h-3 relative rounded-full z-40 ${
                   progress >= val ? "bg-green-300" : "bg-slate-500"
                 }`}

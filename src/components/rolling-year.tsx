@@ -16,7 +16,10 @@ export const RollingYear = ({
         .toString()
         .split("")
         .map((val, index) => (
-          <div className="relative h-18 w-12 rounded-lg bg-slate-800 text-white shadow-md overflow-hidden text-5xl font-bold flex justify-center items-center">
+          <div
+            key={index}
+            className="relative h-18 w-12 rounded-lg bg-slate-800 text-white shadow-md overflow-hidden text-5xl font-bold flex justify-center items-center"
+          >
             <AnimatePresence initial={false} mode="popLayout">
               <motion.span
                 initial={{

@@ -12,7 +12,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/ep-ai.png"
+          src="/src/assets/ep-ai.png"
           className={className}
         />
       );
@@ -24,7 +24,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/gg-ai.png"
+          src="/src/assets/gg-ai.png"
           className={className}
         />
       );
@@ -36,7 +36,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/fj-ai.png"
+          src="/src/assets/fj-ai.png"
           className={className}
         />
       );
@@ -48,7 +48,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/tex-hol-ai.png"
+          src="/src/assets/tex-hol-ai.png"
           className={className}
         />
       );
@@ -60,7 +60,7 @@ export const AiImage = ({ year }: { year: number }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-          src="/all-hol-ai.png"
+          src="/src/assets/all-hol-ai.png"
           className={className}
         />
       );
@@ -72,7 +72,7 @@ export const AiImage = ({ year }: { year: number }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
-        src="/loading-ai.png"
+        src="/src/assets/loading-ai.png"
         className={className}
       />
     );
