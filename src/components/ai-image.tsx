@@ -19,6 +19,7 @@ export const AiImage = ({ year }: { year: number }) => {
     return (
       <motion.img
         key="ep-image"
+        alt="emancipation-proclamation"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -32,6 +33,7 @@ export const AiImage = ({ year }: { year: number }) => {
     return (
       <motion.img
         key="gg-image"
+        alt="general-order-3"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -45,6 +47,7 @@ export const AiImage = ({ year }: { year: number }) => {
     return (
       <motion.img
         key="fj-image"
+        alt="first-celebration"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -58,6 +61,7 @@ export const AiImage = ({ year }: { year: number }) => {
     return (
       <motion.img
         key="tex-hol-image"
+        alt="holiday-in-texas"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -71,6 +75,7 @@ export const AiImage = ({ year }: { year: number }) => {
     return (
       <motion.img
         key="all-hol-image"
+        alt="federal-holiday"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -84,6 +89,7 @@ export const AiImage = ({ year }: { year: number }) => {
   return (
     <motion.img
       key="loading-image"
+      alt="loading"
       initial={initial}
       animate={animate}
       exit={exit}
