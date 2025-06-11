@@ -7,8 +7,8 @@ export const QuotesContainer = ({ children }: PropsWithChildren) => {
     <motion.section
       variants={quotesContainer}
       initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0"
+      whileInView="show"
+      className="flex flex-col gap-4 md:gap-6 px-4 md:p-0 mb-3.5"
       style={{ maxWidth: "600px" }}
       id="emancipation-proclamation"
     >

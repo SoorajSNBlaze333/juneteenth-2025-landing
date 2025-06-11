@@ -10,7 +10,7 @@ export const Quote = ({
     <motion.div
       key={animationKey}
       variants={variants}
-      className="text-xs md:text-sm text-slate-200 col-span-5 border-[1px] border-slate-500 bg-gray-700 shadow-md p-2 rounded-md cursor-pointer"
+      className="text-xs md:text-sm text-slate-100 col-span-5 border-2 border-white/15 bg-white/10 backdrop-blur-sm p-2 rounded-md cursor-pointer"
     >
       <p className="m-0 border-l-2 border-green-300/70 pl-2">{children}</p>
     </motion.div>

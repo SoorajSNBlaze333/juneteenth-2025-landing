@@ -7,23 +7,36 @@ import {
   motion,
 } from "motion/react";
 
+// import ggImage from "../assets/gg-ai.webp";
+// import fjImage from "../assets/fj-ai.webp";
+// import texHolImage from "../assets/tex-hol-ai.webp";
+// import allHolImage from "../assets/all-hol-ai.webp";
+// import loadingImage from "../assets/loading-ai.webp";
+
 // Misc Components
-import { YearTitle } from "./components/year-title";
-import { Title } from "./components/title";
-import { AiImage } from "./components/ai-image";
+// import { YearTitle } from "./components/year-title";
+// import { Title } from "./components/title";
+// import { AiImage } from "./components/ai-image";
 import { RollingYear } from "./components/rolling-year";
-import { YearProgress } from "./components/year-progress";
-import { BreakingChains } from "./components/breaking-chains";
-import { Footer } from "./components/footer";
+import { SnapSection } from "./components/sections/snap-section";
+// import { AiImage } from "./components/ai-image";
+import { TitleGeneralOrder } from "./components/titles/title-general-order";
+import { BackgroundBlur } from "./components/misc/background-blur";
+import { Emancipation } from "./components/sections/emancipation";
+import { GeneralOrder } from "./components/sections/general-order";
+import { FirstJuneteenthCelebration } from "./components/sections/first-juneteenth";
+// import { YearProgress } from "./components/year-progress";
+// import { BreakingChains } from "./components/breaking-chains";
+// import { Footer } from "./components/footer";
 
 // Historic Events
-import { EmancipationProclamation } from "./components/historic-events/emancipation-proclamation";
-import { GeneralOrderThree } from "./components/historic-events/general-order-three";
-import { FirstCelebration } from "./components/historic-events/first-celebration";
-import { TexasHoliday } from "./components/historic-events/texas-holiday";
-import { FederalHoliday } from "./components/historic-events/federal-holiday";
-import { OtherYears } from "./components/historic-events/other-years";
-import { BackgroundBlur } from "./components/misc/background-blur";
+// import { EmancipationProclamation } from "./components/historic-events/emancipation-proclamation";
+// import { GeneralOrderThree } from "./components/historic-events/general-order-three";
+// import { FirstCelebration } from "./components/historic-events/first-celebration";
+// import { TexasHoliday } from "./components/historic-events/texas-holiday";
+// import { FederalHoliday } from "./components/historic-events/federal-holiday";
+// import { OtherYears } from "./components/historic-events/other-years";
+// import { BackgroundBlur } from "./components/misc/background-blur";
 
 const PERCENTAGE = [0, 0.25, 0.5, 0.75, 1];
 const YEARS = [1863, 1865, 1872, 1980, 2021];
@@ -34,7 +47,8 @@ const App = () => {
   const [year, setYear] = useState(1863);
   const scrollRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({ container: scrollRef });
-  const currentYear = useTransform(scrollYProgress, PERCENTAGE, YEARS);
+  // const currentYear = useTransform(scrollYProgress, PERCENTAGE, YEARS);
+  const index = useTransform(scrollYProgress, [0, 1], [0, YEARS.length - 1]);
 
   // set the scroll & set direction based on scroll
   useMotionValueEvent(scrollYProgress, "change", (newScroll) => {
@@ -46,9 +60,9 @@ const App = () => {
     setScroll(newScroll);
   });
 
-  // get the current year based on the transformed scroll y
-  useMotionValueEvent(currentYear, "change", (latest) => {
-    setYear(Math.round(latest));
+  useMotionValueEvent(index, "change", (latest) => {
+    const i = Math.round(latest);
+    setYear(YEARS[i]);
   });
 
   const handleYearClick = (progress: number) => {
@@ -120,46 +134,37 @@ const App = () => {
 
   return (
     <>
-      <BreakingChains />
-      <main ref={scrollRef} className="relative overflow-y-scroll h-screen">
-        <section
-          className="relative w-full grid grid-cols-1"
-          style={{ height: "400vh" }}
-        >
-          <section className="sticky top-0 col-span-1 flex justify-center items-center h-screen w-full gap-4">
-            <AnimatePresence initial={false} mode="popLayout">
-              <motion.section
-                key={isYearAvailable ? "year-available" : "year-not-available"}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, type: "spring", bounce: 0.25 }}
-                className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-[1000px] w-full"
-              >
-                <motion.div className="col-span-2 flex justify-center md:justify-end items-center gap-6">
-                  <YearProgress progress={scroll} onClick={handleYearClick} />
-                  <div className="flex flex-col justify-center items-end gap-6">
-                    <AiImage year={year} />
-                    <RollingYear year={year} direction={direction} />
-                  </div>
-                </motion.div>
-                <div className="col-span-3 flex flex-col justify-start items-center md:items-start gap-4">
-                  <Title year={year} />
-                  <YearTitle year={year} />
-                  {year === 1863 && <EmancipationProclamation />}
-                  {year === 1865 && <GeneralOrderThree />}
-                  {year === 1872 && <FirstCelebration />}
-                  {year === 1980 && <TexasHoliday />}
-                  {year === 2021 && <FederalHoliday />}
-                  {!isYearAvailable && <OtherYears year={year} />}
-                </div>
-              </motion.section>
-            </AnimatePresence>
-          </section>
-        </section>
-        <BackgroundBlur />
-        <Footer />
+      <main
+        className="relative overflow-y-scroll h-screen snap-y snap-mandatory"
+        ref={scrollRef}
+      >
+        <div className="sticky top-1/2 -translate-y-1/2 z-10 flex justify-center">
+          <AnimatePresence initial={false} mode="popLayout">
+            <RollingYear year={year} direction={direction} />
+          </AnimatePresence>
+        </div>
+
+        <motion.section className="h-[500vh]">
+          <AnimatePresence initial={false} mode="popLayout">
+            <SnapSection>
+              <Emancipation />
+            </SnapSection>
+            <SnapSection>
+              <GeneralOrder />
+            </SnapSection>
+            <SnapSection>
+              <FirstJuneteenthCelebration />
+            </SnapSection>
+            <SnapSection>
+              <TitleGeneralOrder />
+            </SnapSection>
+            <SnapSection>
+              <TitleGeneralOrder />
+            </SnapSection>
+          </AnimatePresence>
+        </motion.section>
       </main>
+      <BackgroundBlur />
     </>
   );
 };
