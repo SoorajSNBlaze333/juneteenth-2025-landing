@@ -136,7 +136,7 @@ const App = () => {
   return (
     <>
       <main
-        className="relative overflow-y-scroll h-screen snap-y snap-mandatory"
+        className="relative overflow-y-scroll h-screen snap-y snap-mandatory scrollbar-none"
         ref={scrollRef}
       >
         <div className="sticky top-1/2 -translate-y-1/2 z-10 flex justify-center">
