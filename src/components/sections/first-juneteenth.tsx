@@ -9,9 +9,6 @@ export const FirstJuneteenthCelebration = () => {
     <>
       <TitleFirstJuneteenth />
       <div className="border-r-2 border-slate-100/20 row-start-2 row-span-2 col-start-1 col-span-1 p-4 flex justify-end items-start">
-        <FirstCelebration />
-      </div>
-      <div className="border-l-2 border-slate-100/20 row-start-1 row-span-2 col-start-3 col-span-2 p-4 flex justify-start items-end">
         <motion.img
           alt="emancipation-proclamation"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -27,6 +24,9 @@ export const FirstJuneteenthCelebration = () => {
           src={fjImage}
           className="h-[80%] rounded-lg"
         />
+      </div>
+      <div className="border-l-2 border-slate-100/20 row-start-1 row-span-2 col-start-3 col-span-2 p-4 flex justify-start items-end">
+        <FirstCelebration />
       </div>
       <div className="border-t-2 border-slate-100/20 row-start-3 row-span-1 col-start-2 col-span-2 p-4 flex justify-start items-start gap-4">
         <motion.img

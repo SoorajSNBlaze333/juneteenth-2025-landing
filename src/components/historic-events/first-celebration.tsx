@@ -19,7 +19,6 @@ export const FirstCelebration = () => {
         <motion.img
           alt="first-juneteenth-celebrations-ticket"
           src={emancipationImage}
-          className="sepia-50"
         />
       </motion.div>
       <Quote animationKey="highlight-2" variants={quotesItem}>
