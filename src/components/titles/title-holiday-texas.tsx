@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 
-export const TitleGeneralOrder = () => {
+export const TitleHolidayTexas = () => {
   return (
-    <div className="row-start-3 row-span-1 col-span-2 p-4 border-t-2 border-slate-100/20 flex flex-col justify-start items-end h-full w-full">
+    <div className="row-start-1 row-span-1 col-start-2 col-span-2 p-4 border-b-2 border-slate-100/20 flex flex-col justify-end items-start h-full w-full">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -16,11 +16,11 @@ export const TitleGeneralOrder = () => {
         }}
         className="text-white"
       >
-        <p className="text-7xl 2xl:text-8xl font-bold text-right">
-          General Order No. 3
+        <p className="text-7xl 2xl:text-8xl font-bold text-left">
+          First Holiday in Texas
         </p>
-        <p className="text-2xl 2xl:text-3xl font-semibold text-right">
-          June 19, 1865
+        <p className="text-2xl 2xl:text-3xl font-semibold text-left">
+          Jan 1, 1980
         </p>
       </motion.div>
     </div>

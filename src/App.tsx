@@ -25,6 +25,7 @@ import { BackgroundBlur } from "./components/misc/background-blur";
 import { Emancipation } from "./components/sections/emancipation";
 import { GeneralOrder } from "./components/sections/general-order";
 import { FirstJuneteenthCelebration } from "./components/sections/first-juneteenth";
+import { HolidayTexas } from "./components/sections/holiday-texas";
 // import { YearProgress } from "./components/year-progress";
 // import { BreakingChains } from "./components/breaking-chains";
 // import { Footer } from "./components/footer";
@@ -156,7 +157,7 @@ const App = () => {
               <FirstJuneteenthCelebration />
             </SnapSection>
             <SnapSection>
-              <TitleGeneralOrder />
+              <HolidayTexas />
             </SnapSection>
             <SnapSection>
               <TitleGeneralOrder />

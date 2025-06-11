@@ -18,7 +18,7 @@ export const RollingYear = ({
         .map((val, index) => (
           <div
             key={index}
-            className="relative h-28 xl:h-36 w-20 xl:w-26 rounded-lg border-2 bg-white/10 backdrop-blur-sm border-white/15 text-white overflow-hidden text-8xl xl:text-9xl font-bold flex justify-center items-center"
+            className="relative h-28 2xl:h-36 w-20 2xl:w-26 rounded-lg border-2 bg-white/10 backdrop-blur-sm border-white/15 text-white overflow-hidden text-8xl 2xl:text-9xl font-bold flex justify-center items-center"
           >
             <AnimatePresence initial={false} mode="popLayout">
               <motion.span

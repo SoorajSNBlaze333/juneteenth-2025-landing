@@ -16,10 +16,12 @@ export const TitleEmancipation = () => {
         }}
         className="text-white"
       >
-        <p className="text-8xl font-bold text-right">
+        <p className="text-7xl 2xl:text-8xl font-bold text-right">
           The Emancipation Proclamation
         </p>
-        <p className="text-3xl font-semibold text-right">Jan 1, 1863</p>
+        <p className="text-2xl 2xl:text-3xl font-semibold text-right">
+          Jan 1, 1863
+        </p>
       </motion.div>
     </div>
   );

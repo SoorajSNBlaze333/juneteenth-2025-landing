@@ -14,7 +14,7 @@ export const FirstCelebration = () => {
       </Quote>
       <motion.div
         variants={quotesItem}
-        className="h-44 overflow-hidden flex justify-center items-center rounded-lg"
+        className="h-24 2xl:h-44 overflow-hidden flex justify-center items-center rounded-lg"
       >
         <motion.img
           alt="first-juneteenth-celebrations-ticket"

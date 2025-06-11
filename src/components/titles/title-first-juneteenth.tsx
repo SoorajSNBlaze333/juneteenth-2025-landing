@@ -16,10 +16,12 @@ export const TitleFirstJuneteenth = () => {
         }}
         className="text-white"
       >
-        <p className="text-8xl font-bold text-right">
+        <p className="text-7xl 2xl:text-8xl font-bold text-right">
           First Juneteenth Celebrations
         </p>
-        <p className="text-3xl font-semibold text-right">June 19, 1872</p>
+        <p className="text-2xl 2xl:text-3xl font-semibold text-right">
+          June 19, 1872
+        </p>
       </motion.div>
     </div>
   );
