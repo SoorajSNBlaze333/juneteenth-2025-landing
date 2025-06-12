@@ -33,7 +33,7 @@ export const GeneralOrder = () => {
           className="flex justify-start items-center gap-6 w-full py-2"
         >
           <div className="h-20 w-20 flex justify-center items-center rounded-xl overflow-hidden">
-            <img className="w-20 mt-2" src={gordonImage} />
+            <img alt="gordon-image" className="w-20 mt-2" src={gordonImage} />
           </div>
         </motion.section>
       </div>

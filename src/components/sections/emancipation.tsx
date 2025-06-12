@@ -98,10 +98,10 @@ export const Emancipation = () => {
           className="flex justify-start items-center gap-4 w-full mb-4"
         >
           <div className="h-20 w-20 flex justify-center items-center rounded-xl overflow-hidden relative">
-            <img className="w-20 mt-6 sepia-50" src={abImage} />
+            <img alt="ab-image" className="w-20 mt-6 sepia-50" src={abImage} />
           </div>
           <div className="h-20 w-20 flex justify-center items-center rounded-xl overflow-hidden relative">
-            <img className="w-20 mt-6 sepia-50" src={wsImage} />
+            <img alt="ws-image" className="w-20 mt-6 sepia-50" src={wsImage} />
           </div>
         </motion.section>
       </div>

@@ -75,7 +75,7 @@ export const HolidayTexas = () => {
           className="flex justify-start items-center gap-6 w-full"
         >
           <div className="h-20 w-20 flex justify-center items-center rounded-xl overflow-hidden">
-            <img className="w-20 mt-2" src={alEdwardsImage} />
+            <img alt="ae-image" className="w-20 mt-2" src={alEdwardsImage} />
           </div>
         </motion.section>
       </div>
