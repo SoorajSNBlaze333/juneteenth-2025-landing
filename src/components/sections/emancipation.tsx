@@ -5,7 +5,7 @@ import epImageOne from "../../assets/ep-1.jpg";
 import epImageTwo from "../../assets/ep-2.jpg";
 import abImage from "../../assets/ab.jpg";
 import wsImage from "../../assets/ws.png";
-import { EmancipationProclamation } from "../historic-events/emancipation-proclamation";
+import { EmancipationProclamation } from "../quotes/emancipation-proclamation";
 import { ImageWrapper } from "../misc/image-wrapper";
 
 export const Emancipation = () => {
@@ -52,13 +52,8 @@ export const Emancipation = () => {
         <ImageWrapper
           className="h-[80%] w-72 rounded-lg"
           description="Ai's interpretation of The Emancipation Proclamation - 1863"
-        >
-          <motion.img
-            alt="emancipation-proclamation-ai-image"
-            src={epImage}
-            className="absolute"
-          />
-        </ImageWrapper>
+          image={epImage}
+        />
       </div>
 
       <div className="border-t-2 border-slate-100/20 row-start-3 row-span-1 col-start-2 col-span-1 flex justify-evenly items-start gap-6 p-4">

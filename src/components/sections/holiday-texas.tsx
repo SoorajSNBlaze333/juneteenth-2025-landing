@@ -4,10 +4,10 @@ import alEdwardsImage from "../../assets/al-edwards.jpg";
 import alEdwardsBioImage from "../../assets/al-edwards-bio.jpg";
 import alEdwardsSpeech from "../../assets/al-ed-speech.jpg";
 import { TitleHolidayTexas } from "../titles/title-holiday-texas";
-import { TexasHoliday } from "../historic-events/texas-holiday";
-import { Quote } from "../quote";
-import { QuotesContainer } from "../quotes-container";
+import { TexasHoliday } from "../quotes/texas-holiday";
 import { quotesItem } from "../../utils/variants";
+import { QuotesContainer } from "../misc/quotes-container";
+import { Quote } from "../misc/quote";
 
 export const HolidayTexas = () => {
   return (

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   useScroll,
   useTransform,
@@ -7,7 +7,7 @@ import {
   motion,
 } from "motion/react";
 
-import { RollingYear } from "./components/rolling-year";
+import { RollingYear } from "./components/years/rolling-year";
 import { SnapSection } from "./components/sections/snap-section";
 import { BackgroundBlur } from "./components/misc/background-blur";
 import { Emancipation } from "./components/sections/emancipation";
@@ -16,7 +16,6 @@ import { FirstJuneteenthCelebration } from "./components/sections/first-juneteen
 import { HolidayTexas } from "./components/sections/holiday-texas";
 import { FederalHoliday } from "./components/sections/federal-holiday";
 
-const PERCENTAGE = [0, 0.25, 0.5, 0.75, 1];
 const YEARS = [1863, 1865, 1872, 1980, 2021];
 
 const App = () => {
@@ -41,73 +40,6 @@ const App = () => {
     const i = Math.round(latest);
     setYear(YEARS[i]);
   });
-
-  const handleYearClick = (progress: number) => {
-    if (scrollRef.current) {
-      const totalScrollableHeight =
-        scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
-
-      const scrollY = totalScrollableHeight * progress;
-
-      scrollRef.current.scrollTo({
-        top: scrollY,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const isYearAvailable = useMemo(
-    () =>
-      year === 1863 ||
-      year === 1865 ||
-      year === 1872 ||
-      year === 1980 ||
-      year === 2021,
-    [year]
-  );
-
-  const findClosestYear = useCallback(
-    (direction: number) => {
-      if (isYearAvailable) {
-        const indexOfCurrentYear = YEARS.findIndex((YEAR) => YEAR === year);
-        if (direction > 0) {
-          return PERCENTAGE[Math.min(YEARS.length - 1, indexOfCurrentYear + 1)];
-        }
-        return PERCENTAGE[Math.max(0, indexOfCurrentYear - 1)];
-      } else {
-        let ranges = { rangeStart: -1, rangeEnd: -1 };
-        YEARS.forEach((YEAR, index) => {
-          if (year >= YEAR) {
-            ranges = {
-              rangeStart: index,
-              rangeEnd: Math.min(YEARS.length - 1, index + 1),
-            };
-          }
-        });
-        return PERCENTAGE[direction > 0 ? ranges.rangeEnd : ranges.rangeStart];
-      }
-    },
-    [isYearAvailable, year]
-  );
-
-  const handleKeys = useCallback(
-    (key: string) => {
-      if (key === "ArrowRight") {
-        handleYearClick(findClosestYear(1));
-      } else if (key === "ArrowLeft") {
-        handleYearClick(findClosestYear(-1));
-      }
-    },
-    [findClosestYear]
-  );
-
-  useEffect(() => {
-    window.addEventListener("keydown", (event) => handleKeys(event.key));
-
-    return () => {
-      window.removeEventListener("keydown", (event) => handleKeys(event.key));
-    };
-  }, [handleKeys, isYearAvailable, year]);
 
   return (
     <>

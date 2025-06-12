@@ -1,11 +1,17 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useState, type PropsWithChildren } from "react";
+import { useState } from "react";
 
 export const ImageWrapper = ({
-  children,
   className,
+  image,
   description,
-}: PropsWithChildren<{ className: string; description: string }>) => {
+  imageClassName,
+}: {
+  className: string;
+  image: string;
+  description?: string;
+  imageClassName?: string;
+}) => {
   const [onHover, setOnHover] = useState(false);
 
   return (
@@ -20,11 +26,17 @@ export const ImageWrapper = ({
         bounce: 0.2,
         damping: 8,
       }}
-      onMouseEnter={() => setOnHover(true)}
+      onMouseEnter={() => setOnHover(Boolean(description) && true)}
       onMouseLeave={() => setOnHover(false)}
       className={`${className} relative overflow-hidden z-50 flex justify-center items-center`}
     >
-      {children}
+      <motion.img
+        alt="image-wrapper-alt"
+        src={image}
+        className={`absolute scale-100 ${
+          imageClassName ? imageClassName : "2xl:scale-125"
+        }`}
+      />
       <AnimatePresence initial={false}>
         {onHover && (
           <motion.p

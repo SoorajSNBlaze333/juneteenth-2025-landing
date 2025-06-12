@@ -1,6 +1,6 @@
-import { Quote } from "../quote";
 import { quotesItem } from "../../utils/variants";
-import { QuotesContainer } from "../quotes-container";
+import { Quote } from "../misc/quote";
+import { QuotesContainer } from "../misc/quotes-container";
 
 export const TexasHoliday = () => {
   return (

@@ -1,4 +1,4 @@
-import { GeneralOrderThree } from "../historic-events/general-order-three";
+import { GeneralOrderThree } from "../quotes/general-order-three";
 import { TitleGeneralOrder } from "../titles/title-general-order";
 import { motion } from "motion/react";
 import ggImage from "../../assets/gg-ai.webp";
@@ -14,35 +14,15 @@ export const GeneralOrder = () => {
         <ImageWrapper
           className="h-[80%] w-72 rounded-lg"
           description="Ai's interpretation of The General Order No.3 - 1865"
-        >
-          <motion.img
-            alt="general-order-ai-image"
-            src={ggImage}
-            className="absolute"
-          />
-        </ImageWrapper>
+          image={ggImage}
+        />
       </div>
       <div className="border-b-2 border-slate-100/20 row-start-1 row-span-1 col-start-2 col-span-1 p-4 flex justify-center items-end">
         <ImageWrapper
           className="h-[80%] w-full rounded-xl"
           description="General Granger arrived in Galveston, Texas, with Union troops to enforce the order."
-        >
-          <motion.img
-            alt="general-order-news"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{
-              duration: 0.2,
-              delay: 0.1,
-              type: "spring",
-              bounce: 0.2,
-              damping: 8,
-            }}
-            src={ggNewsImage}
-            className="rounded-lg sepia-50"
-          />
-        </ImageWrapper>
+          image={ggNewsImage}
+        />
       </div>
       <div className="border-l-2 border-slate-100/20 row-start-1 row-span-2 col-start-3 col-span-1 p-4 flex flex-col-reverse justify-start items-end">
         <GeneralOrderThree />

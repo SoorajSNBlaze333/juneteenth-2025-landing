@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { quotesContainer } from "../utils/variants";
+import { quotesContainer } from "../../utils/variants";
 import { motion } from "motion/react";
 
 export const QuotesContainer = ({ children }: PropsWithChildren) => {
