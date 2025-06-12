@@ -3,6 +3,7 @@ import { quotesItem } from "../../utils/variants";
 import { QuotesContainer } from "../quotes-container";
 import { motion } from "motion/react";
 import emancipationImage from "../../assets/emancipation-park.png";
+import { ImageWrapper } from "../misc/image-wrapper";
 
 export const FirstCelebration = () => {
   return (
@@ -12,15 +13,17 @@ export const FirstCelebration = () => {
         Juneteenth celebrations to honor their newly recognized freedom after
         the reading of General Order No. 3 in 1865.
       </Quote>
-      <motion.div
-        variants={quotesItem}
-        className="h-24 2xl:h-44 overflow-hidden flex justify-center items-center rounded-lg"
+      <ImageWrapper
+        className="h-24 2xl:h-44  rounded-lg"
+        description="The Emancipation Park - Houston."
       >
-        <motion.img
-          alt="first-juneteenth-celebrations-ticket"
-          src={emancipationImage}
-        />
-      </motion.div>
+        <motion.div variants={quotesItem} className="absolute">
+          <motion.img
+            alt="first-juneteenth-celebrations-ticket"
+            src={emancipationImage}
+          />
+        </motion.div>
+      </ImageWrapper>
       <Quote animationKey="highlight-2" variants={quotesItem}>
         A group of formerly enslaved Black community leaders in Houston pooled
         $800 to purchase Emancipation Park, a dedicated space for Juneteenth

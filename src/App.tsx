@@ -7,37 +7,14 @@ import {
   motion,
 } from "motion/react";
 
-// import ggImage from "../assets/gg-ai.webp";
-// import fjImage from "../assets/fj-ai.webp";
-// import texHolImage from "../assets/tex-hol-ai.webp";
-// import allHolImage from "../assets/all-hol-ai.webp";
-// import loadingImage from "../assets/loading-ai.webp";
-
-// Misc Components
-// import { YearTitle } from "./components/year-title";
-// import { Title } from "./components/title";
-// import { AiImage } from "./components/ai-image";
 import { RollingYear } from "./components/rolling-year";
 import { SnapSection } from "./components/sections/snap-section";
-// import { AiImage } from "./components/ai-image";
-import { TitleGeneralOrder } from "./components/titles/title-general-order";
 import { BackgroundBlur } from "./components/misc/background-blur";
 import { Emancipation } from "./components/sections/emancipation";
 import { GeneralOrder } from "./components/sections/general-order";
 import { FirstJuneteenthCelebration } from "./components/sections/first-juneteenth";
 import { HolidayTexas } from "./components/sections/holiday-texas";
-// import { YearProgress } from "./components/year-progress";
-// import { BreakingChains } from "./components/breaking-chains";
-// import { Footer } from "./components/footer";
-
-// Historic Events
-// import { EmancipationProclamation } from "./components/historic-events/emancipation-proclamation";
-// import { GeneralOrderThree } from "./components/historic-events/general-order-three";
-// import { FirstCelebration } from "./components/historic-events/first-celebration";
-// import { TexasHoliday } from "./components/historic-events/texas-holiday";
-// import { FederalHoliday } from "./components/historic-events/federal-holiday";
-// import { OtherYears } from "./components/historic-events/other-years";
-// import { BackgroundBlur } from "./components/misc/background-blur";
+import { FederalHoliday } from "./components/sections/federal-holiday";
 
 const PERCENTAGE = [0, 0.25, 0.5, 0.75, 1];
 const YEARS = [1863, 1865, 1872, 1980, 2021];
@@ -160,7 +137,7 @@ const App = () => {
               <HolidayTexas />
             </SnapSection>
             <SnapSection>
-              <TitleGeneralOrder />
+              <FederalHoliday />
             </SnapSection>
           </AnimatePresence>
         </motion.section>

@@ -11,5 +11,5 @@ export const quotesContainer = {
 
 export const quotesItem = {
   hidden: { opacity: 0, y: -10 },
-  show: { opacity: 1, y: 10 },
+  show: { opacity: 1, y: 0 },
 };
