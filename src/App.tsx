@@ -25,7 +25,6 @@ const App = () => {
   const [year, setYear] = useState(1863);
   const scrollRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({ container: scrollRef });
-  // const currentYear = useTransform(scrollYProgress, PERCENTAGE, YEARS);
   const index = useTransform(scrollYProgress, [0, 1], [0, YEARS.length - 1]);
 
   // set the scroll & set direction based on scroll
