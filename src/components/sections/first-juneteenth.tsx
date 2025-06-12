@@ -1,6 +1,6 @@
-import fjImage from "../../assets/fj-ai.webp";
-import fjImageCelebrations from "../../assets/fj-old.jpg";
-import fjImageCelebrationsNew from "../../assets/first-juneteenth-celebs.webp";
+import fjImage from "../../assets/section-3/fj-ai.webp";
+import fjImageCelebrations from "../../assets/section-3/fj-old.webp";
+import fjImageCelebrationsNew from "../../assets/section-3/first-juneteenth-celebs.webp";
 import { TitleFirstJuneteenth } from "../titles/title-first-juneteenth";
 import { FirstCelebration } from "../quotes/first-celebration";
 import { ImageWrapper } from "../misc/image-wrapper";

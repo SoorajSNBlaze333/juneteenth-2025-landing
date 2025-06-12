@@ -1,6 +1,6 @@
-import celebrateImage from "../../assets/celebrate.jpg";
-import juneteenthLawImage from "../../assets/juneteenth-law.jpg";
-import juneteenthLogoImage from "../../assets/logo.jpg";
+import celebrateImage from "../../assets/section-5/celebrate.webp";
+import juneteenthLawImage from "../../assets/section-5/juneteenth-law.webp";
+import juneteenthLogoImage from "../../assets/section-5/logo.webp";
 import { TitleFederalHoliday } from "../titles/title-federal-holiday";
 import { FederalHolidayEvent } from "../quotes/federal-holiday-event";
 import { ImageWrapper } from "../misc/image-wrapper";
@@ -19,7 +19,7 @@ export const FederalHoliday = () => {
       <div className="border-b-2 border-slate-100/20 row-start-1 row-span-1 col-start-2 col-span-1 p-4 flex justify-center items-end">
         <ImageWrapper
           className="h-[80%] w-full rounded-lg"
-          description="President Joe Biden signs the law - 2021"
+          description="President Joe Biden signs the bill establishing Juneteenth as a federal holiday - 2021"
           image={juneteenthLawImage}
           imageClassName="2xl:scale-100"
         />

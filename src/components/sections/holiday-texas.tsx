@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import texHolImage from "../../assets/tex-hol-ai.webp";
-import alEdwardsImage from "../../assets/al-edwards.jpg";
-import alEdwardsBioImage from "../../assets/al-edwards-bio.jpg";
-import alEdwardsSpeech from "../../assets/al-ed-speech.jpg";
+import texHolImage from "../../assets/section-4/tex-hol-ai.webp";
+import alEdwardsImage from "../../assets/section-4/al-edwards.webp";
+import alEdwardsBioImage from "../../assets/section-4/al-edwards-bio.webp";
+import alEdwardsSpeech from "../../assets/section-4/al-ed-speech.webp";
 import { TitleHolidayTexas } from "../titles/title-holiday-texas";
 import { TexasHoliday } from "../quotes/texas-holiday";
 import { quotesItem } from "../../utils/variants";

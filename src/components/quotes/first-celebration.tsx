@@ -1,6 +1,6 @@
 import { quotesItem } from "../../utils/variants";
 import { ImageWrapper } from "../misc/image-wrapper";
-import emancipationImage from "../../assets/emancipation-park.png";
+import emancipationImage from "../../assets/section-3/emancipation-park.webp";
 import { QuotesContainer } from "../misc/quotes-container";
 import { Quote } from "../misc/quote";
 

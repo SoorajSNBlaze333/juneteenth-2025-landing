@@ -1,10 +1,10 @@
 import { TitleEmancipation } from "../titles/title-emancipation";
 import { motion } from "motion/react";
-import epImage from "../../assets/ep-ai.webp";
-import epImageOne from "../../assets/ep-1.jpg";
-import epImageTwo from "../../assets/ep-2.jpg";
-import abImage from "../../assets/ab.jpg";
-import wsImage from "../../assets/ws.png";
+import epImage from "../../assets/section-1/ep-ai.webp";
+import epImageOne from "../../assets/section-1/ep-1.webp";
+import epImageTwo from "../../assets/section-1/ep-2.webp";
+import abImage from "../../assets/section-1/ab.webp";
+import wsImage from "../../assets/section-1/ws.webp";
 import { EmancipationProclamation } from "../quotes/emancipation-proclamation";
 import { ImageWrapper } from "../misc/image-wrapper";
 

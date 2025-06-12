@@ -1,10 +1,10 @@
 import { GeneralOrderThree } from "../quotes/general-order-three";
 import { TitleGeneralOrder } from "../titles/title-general-order";
 import { motion } from "motion/react";
-import ggImage from "../../assets/gg-ai.webp";
-import gordonImage from "../../assets/gordon.jpg";
-import galvestonDailyImage from "../../assets/gd.webp";
-import ggNewsImage from "../../assets/gg-news.jpg";
+import ggImage from "../../assets/section-2/gg-ai.webp";
+import gordonImage from "../../assets/section-2/gordon.webp";
+import galvestonDailyImage from "../../assets/section-2/gd.webp";
+import ggNewsImage from "../../assets/section-2/gg-news.webp";
 import { ImageWrapper } from "../misc/image-wrapper";
 
 export const GeneralOrder = () => {
