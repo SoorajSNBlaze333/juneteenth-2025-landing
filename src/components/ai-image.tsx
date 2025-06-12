@@ -12,21 +12,19 @@ const exit = { opacity: 0 };
 const transition = { duration: 0.4, type: "spring", bounce: 0.2 };
 
 export const AiImage = ({ year }: { year: number }) => {
-  const className =
-    "max-w-52 rounded-lg border-[1px] border-amber-800 hidden md:block";
+  const className = "h-full rounded-lg";
 
   if (year === 1863) {
     return (
       <motion.img
         key="ep-image"
         alt="emancipation-proclamation"
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, type: "spring", bounce: 0.2 }}
         src={epImage}
-        loading="lazy"
-        className={className}
+        className="h-full rounded-lg"
       />
     );
   } else if (year === 1865) {
@@ -34,10 +32,10 @@ export const AiImage = ({ year }: { year: number }) => {
       <motion.img
         key="gg-image"
         alt="general-order-3"
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
+        // initial={initial}
+        // animate={animate}
+        // exit={exit}
+        // transition={transition}
         src={ggImage}
         loading="lazy"
         className={className}
@@ -48,10 +46,10 @@ export const AiImage = ({ year }: { year: number }) => {
       <motion.img
         key="fj-image"
         alt="first-celebration"
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
+        // initial={initial}
+        // animate={animate}
+        // exit={exit}
+        // transition={transition}
         src={fjImage}
         loading="lazy"
         className={className}
@@ -62,10 +60,10 @@ export const AiImage = ({ year }: { year: number }) => {
       <motion.img
         key="tex-hol-image"
         alt="holiday-in-texas"
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
+        // initial={initial}
+        // animate={animate}
+        // exit={exit}
+        // transition={transition}
         src={texHolImage}
         loading="lazy"
         className={className}
@@ -76,10 +74,10 @@ export const AiImage = ({ year }: { year: number }) => {
       <motion.img
         key="all-hol-image"
         alt="federal-holiday"
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
+        // initial={initial}
+        // animate={animate}
+        // exit={exit}
+        // transition={transition}
         src={allHolImage}
         loading="lazy"
         className={className}

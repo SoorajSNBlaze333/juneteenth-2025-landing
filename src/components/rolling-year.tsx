@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 
-const ROLLING_OFFSET = 15;
+const ROLLING_OFFSET = 20;
 
 export const RollingYear = ({
   year,
@@ -11,14 +11,14 @@ export const RollingYear = ({
   size?: string;
 }) => {
   return (
-    <div className="font-bold flex justify-center items-center gap-1">
+    <div className="font-bold flex justify-center items-center gap-2">
       {year
         .toString()
         .split("")
         .map((val, index) => (
           <div
             key={index}
-            className="relative h-18 w-12 rounded-lg bg-slate-800 text-white shadow-md overflow-hidden text-5xl font-bold flex justify-center items-center"
+            className="relative h-28 2xl:h-36 w-20 2xl:w-26 rounded-lg border-2 bg-white/10 backdrop-blur-sm border-white/15 text-white overflow-hidden text-8xl 2xl:text-9xl font-bold flex justify-center items-center"
           >
             <AnimatePresence initial={false} mode="popLayout">
               <motion.span
@@ -32,9 +32,10 @@ export const RollingYear = ({
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.3,
                   type: "spring",
-                  bounce: 0.4,
+                  damping: 9,
+                  bounce: 0.5,
                 }}
                 key={index.toString().concat(val)}
                 className="absolute"
