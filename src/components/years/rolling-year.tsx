@@ -11,7 +11,7 @@ export const RollingYear = ({
   size?: string;
 }) => {
   return (
-    <div className="font-bold flex justify-center items-center gap-2">
+    <div className="font-bold flex justify-center items-center gap-2 z-50">
       {year
         .toString()
         .split("")

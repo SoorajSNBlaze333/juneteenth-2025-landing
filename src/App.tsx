@@ -47,7 +47,7 @@ const App = () => {
         className="relative overflow-y-scroll h-screen snap-y snap-mandatory scrollbar-none"
         ref={scrollRef}
       >
-        <div className="sticky top-1/2 -translate-y-1/2 z-10 flex justify-center">
+        <div className="sticky top-1/2 -translate-y-1/2 z-50 flex justify-center">
           <AnimatePresence initial={false} mode="popLayout">
             <RollingYear year={year} direction={direction} />
           </AnimatePresence>

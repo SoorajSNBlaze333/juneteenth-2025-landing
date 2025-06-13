@@ -28,7 +28,7 @@ export const ImageWrapper = ({
       }}
       onMouseEnter={() => setOnHover(Boolean(description) && true)}
       onMouseLeave={() => setOnHover(false)}
-      className={`${className} relative overflow-hidden z-40 flex justify-center items-center`}
+      className={`${className} relative overflow-hidden z-30 flex justify-center items-center`}
     >
       <motion.img
         alt="image-wrapper-alt"
